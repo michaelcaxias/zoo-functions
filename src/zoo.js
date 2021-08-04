@@ -22,7 +22,9 @@ function createEmployee(personalInfo, associatedWith) {
 }
 
 function isManager(id) {
-  // seu código aqui
+  // Colocar todos os gerentes em um Array e verificar se o id está no array.
+  const managersList = employees.map((element) => element.managers);
+  return managersList.some((element) => element.includes(id));
 }
 
 function addEmployee(id, firstName, lastName, managers, responsibleFor) {
