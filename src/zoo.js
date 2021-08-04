@@ -38,8 +38,15 @@ function addEmployee(id, firstName, lastName, managers = [], responsibleFor = []
   return employees.push(newObject);
 }
 
-function countAnimals(species) {
-  // seu código aqui
+function countAnimals(specieName) {
+  // Utilizar uma HOF para procurar a espécie e retornar o número da população.
+  if (typeof specieName === 'undefined') {
+    return species.reduce((acc, element) => {
+      acc[`${element.name}`] = element.residents.length;
+      return acc;
+    }, {});
+  }
+  return species.find(({ name }) => name === specieName).residents.length;
 }
 
 function calculateEntry(entrants) {
