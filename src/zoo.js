@@ -83,11 +83,25 @@ function getOldestFromFirstSpecies(ID) {
 }
 
 function increasePrices(percentage) {
-  // seu código aqui
+  const profit = percentage / 100;
+  const {Adult, Senior, Child} = prices;
+  const adultProfit = Adult + Adult * profit;
+  const seniorProfit = Senior + Senior * profit;
+  const childProfit = Child + Child * profit;
+  prices.Adult = Math.round(adultProfit * 100) / 100;
+  prices.Senior = Math.round(seniorProfit * 100) / 100;
+  prices.Child = Math.round(childProfit * 100) / 100;
 }
 
 function getEmployeeCoverage(idOrName) {
-  // seu código aqui
+  const getEmployee = employees.find(({ id, firstName, lastName }) => id === idOrName
+   || firstName === idOrName || lastName === idOrName);
+  const findAnimalEmployee = getEmployee.responsibleFor;
+  console.log(findAnimalEmployee);
+  const findAnimal = species.filter(({ id }) => id.includes(findAnimalEmployee));
+  return {
+    [`${getEmployee.firstName} ${getEmployee.lastName}`]: findAnimal,
+  };
 }
 
 module.exports = {
