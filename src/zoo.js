@@ -95,7 +95,7 @@ function getOldestFromFirstSpecies(ID) {
 
 // -----12-----
 function increasePrices(percentage) {
-  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+  // https://javascript.info/number
   const profit = percentage / 100;
   const { Adult, Senior, Child } = prices;
   const adultProfit = Adult + Adult * profit;
