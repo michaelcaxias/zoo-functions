@@ -84,7 +84,7 @@ function getOldestFromFirstSpecies(ID) {
 
 function increasePrices(percentage) {
   const profit = percentage / 100;
-  const {Adult, Senior, Child} = prices;
+  const { Adult, Senior, Child } = prices;
   const adultProfit = Adult + Adult * profit;
   const seniorProfit = Senior + Senior * profit;
   const childProfit = Child + Child * profit;
