@@ -1,4 +1,4 @@
-const { species, employees, prices } = require('./data');
+const { species, employees, prices, hours } = require('./data');
 const data = require('./data');
 
 // -----1-----
@@ -69,13 +69,15 @@ function getAnimalMap(options) {
 
 // -----10-----
 function getSchedule(dayName) {
+  const { Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday } = hours;
+
   const daysObject = {
-    Tuesday: 'Open from 8am until 6pm',
-    Wednesday: 'Open from 8am until 6pm',
-    Thursday: 'Open from 10am until 8pm',
-    Friday: 'Open from 10am until 8pm',
-    Saturday: 'Open from 8am until 10pm',
-    Sunday: 'Open from 8am until 8pm',
+    Tuesday: `Open from ${Tuesday.open}am until ${Tuesday.close - 12}pm`,
+    Wednesday: `Open from ${Wednesday.open}am until ${Wednesday.close - 12}pm`,
+    Thursday: `Open from ${Thursday.open}am until ${Thursday.close - 12}pm`,
+    Friday: `Open from ${Friday.open}am until ${Friday.close - 12}pm`,
+    Saturday: `Open from ${Saturday.open}am until ${Saturday.close - 12}pm`,
+    Sunday: `Open from ${Sunday.open}am until ${Sunday.close - 12}pm`,
     Monday: 'CLOSED',
   };
 
