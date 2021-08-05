@@ -48,7 +48,7 @@ function countAnimals(specieName) {
   // Utilizar uma HOF para procurar a espécie e retornar o número da população.
   if (typeof specieName === 'undefined') {
     return species.reduce((acc, element) => {
-      acc[`${element.name}`] = element.residents.length;
+      acc[element.name] = element.residents.length;
       return acc;
     }, {});
   }
