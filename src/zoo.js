@@ -117,6 +117,7 @@ function getEmployeeCoverage(idOrName) {
     }, {});
     return allEmployees;
   }
+
   const getEmployee = employees.find(({ id, firstName, lastName }) => id === idOrName
    || firstName === idOrName || lastName === idOrName);
   const findAnimalEmployee = getEmployee.responsibleFor;
