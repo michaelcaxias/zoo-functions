@@ -110,13 +110,14 @@ function increasePrices(percentage) {
 function getEmployeeCoverage(idOrName) {
   const getEmployee = employees.find(({ id, firstName, lastName }) => id === idOrName
    || firstName === idOrName || lastName === idOrName);
-  const findAnimalEmployee = getEmployee.responsibleFor[0];
-  const findAnimal = species.find(({ id }) => id.includes(findAnimalEmployee)).name;
+  const findAnimalEmployee = getEmployee.responsibleFor;
+  const findFirstAnimal = species.find(({ id }) => id.includes(findAnimalEmployee[0])).name;
+  const findSecondAnimal = species.find(({ id }) => id.includes(findAnimalEmployee[1])).name;
   return {
-    [`${getEmployee.firstName} ${getEmployee.lastName}`]: findAnimal,
+    [`${getEmployee.firstName} ${getEmployee.lastName}`]: [findFirstAnimal, findSecondAnimal],
   };
 }
-console.log(getEmployeeCoverage('Stephanie'));
+console.log(getEmployeeCoverage('Azevado'));
 
 module.exports = {
   calculateEntry,
