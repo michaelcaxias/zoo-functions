@@ -108,16 +108,24 @@ function increasePrices(percentage) {
 
 // -----13-----
 function getEmployeeCoverage(idOrName) {
+  if (typeof idOrName === 'undefined') {
+    const allEmployees = employees.reduce((acc, curr) => {
+      const findAnimals = curr.responsibleFor.map((animalId) =>
+        species.find(({ id }) => id === animalId).name);
+      acc[`${curr.firstName} ${curr.lastName}`] = findAnimals;
+      return acc;
+    }, {});
+    return allEmployees;
+  }
   const getEmployee = employees.find(({ id, firstName, lastName }) => id === idOrName
    || firstName === idOrName || lastName === idOrName);
   const findAnimalEmployee = getEmployee.responsibleFor;
-  const findFirstAnimal = species.find(({ id }) => id.includes(findAnimalEmployee[0])).name;
-  const findSecondAnimal = species.find(({ id }) => id.includes(findAnimalEmployee[1])).name;
+  const findAnimals = findAnimalEmployee.map((animalId) =>
+    species.find(({ id }) => id === animalId).name);
   return {
-    [`${getEmployee.firstName} ${getEmployee.lastName}`]: [findFirstAnimal, findSecondAnimal],
+    [`${getEmployee.firstName} ${getEmployee.lastName}`]: findAnimals,
   };
 }
-console.log(getEmployeeCoverage('Azevado'));
 
 module.exports = {
   calculateEntry,
