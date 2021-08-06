@@ -24,7 +24,7 @@ const animalsResidents = (animal) => {
   return residentsFilter.map((element) => element.name);
 };
 
-const test = (region) => {
+const animalsAndResidents = (region) => {
   const ne = animalsRegion(region);
   return ne.reduce((acc, curr) => {
     const animalsObject = { [curr]: animalsResidents(curr) };
@@ -32,7 +32,7 @@ const test = (region) => {
     return acc;
   }, []);
 };
-console.log(test('NE'));
+console.log(animalsAndResidents('NE'));
 
 module.exports = {
   noParameter,
