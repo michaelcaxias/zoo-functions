@@ -1,5 +1,6 @@
 const { species, employees, prices, hours } = require('./data');
 const data = require('./data');
+const { noParameter } = require('./getAnimalMap');
 
 // -----1-----
 function getSpeciesByIds(...ids) {
@@ -64,9 +65,9 @@ function calculateEntry(entrants) {
 
 // -----9-----
 function getAnimalMap(options) {
-  // seu código aqui
+  return noParameter(options);
 }
-
+console.log(getAnimalMap());
 // -----10-----
 function getSchedule(dayName) {
   const { Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday } = hours;
