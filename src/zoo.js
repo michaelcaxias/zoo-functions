@@ -1,6 +1,5 @@
 const { species, employees, prices, hours } = require('./data');
 const data = require('./data');
-const { noParameter } = require('./getAnimalMap');
 
 // -----1-----
 function getSpeciesByIds(...ids) {
