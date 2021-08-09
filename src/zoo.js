@@ -65,25 +65,18 @@ function calculateEntry(entrants) {
 
 // -----9-----
 function getAnimalMap(options) {
-  return noParameter(options);
 }
-console.log(getAnimalMap());
 // -----10-----
+
 function getSchedule(dayName) {
-  const { Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday } = hours;
+  const daysObject = Object.keys(hours).reduce((acc, curr) => {
+    let hoursText = `Open from ${hours[curr].open}am until ${hours[curr].close - 12}pm`;
+    if (hours[curr].open === 0) hoursText = 'CLOSED';
+    acc[curr] = hoursText;
+    return acc;
+  }, {});
 
-  const daysObject = {
-    Tuesday: `Open from ${Tuesday.open}am until ${Tuesday.close - 12}pm`,
-    Wednesday: `Open from ${Wednesday.open}am until ${Wednesday.close - 12}pm`,
-    Thursday: `Open from ${Thursday.open}am until ${Thursday.close - 12}pm`,
-    Friday: `Open from ${Friday.open}am until ${Friday.close - 12}pm`,
-    Saturday: `Open from ${Saturday.open}am until ${Saturday.close - 12}pm`,
-    Sunday: `Open from ${Sunday.open}am until ${Sunday.close - 12}pm`,
-    Monday: 'CLOSED',
-  };
-
-  if (typeof dayName === 'undefined') return daysObject;
-
+  if (!dayName) return daysObject;
   return { [`${dayName}`]: daysObject[`${dayName}`] };
 }
 
