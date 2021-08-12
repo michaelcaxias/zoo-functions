@@ -63,7 +63,9 @@ function calculateEntry(entrants) {
 }
 
 // -----9-----
+
 function getAnimalMap(options) {
+
 }
 // -----10-----
 
@@ -76,7 +78,7 @@ function getSchedule(dayName) {
   }, {});
 
   if (!dayName) return daysObject;
-  return { [`${dayName}`]: daysObject[`${dayName}`] };
+  return { [dayName]: daysObject[dayName] };
 }
 
 // -----11-----
