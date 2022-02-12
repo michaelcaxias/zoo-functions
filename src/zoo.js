@@ -1,5 +1,4 @@
 const { species, employees, prices, hours } = require('./data');
-const data = require('./data');
 
 // -----1-----
 function getSpeciesByIds(...ids) {
@@ -26,7 +25,6 @@ function createEmployee(personalInfo, associatedWith) {
 
 // -----5-----
 function isManager(id) {
-  // Colocar todos os gerentes em um Array e verificar se o id está no array.
   const managersList = employees.map((element) => element.managers);
   return managersList.some((element) => element.includes(id));
 }
@@ -45,7 +43,6 @@ function addEmployee(id, firstName, lastName, managers = [], responsibleFor = []
 
 // -----7-----
 function countAnimals(specieName) {
-  // Utilizar uma HOF para procurar a espécie e retornar o número da população.
   if (typeof specieName === 'undefined') {
     return species.reduce((acc, element) => {
       acc[element.name] = element.residents.length;
