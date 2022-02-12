@@ -1,6 +1,6 @@
 <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-3630127-3031259.png" alt="logo javascript" width="80px" align="right">
 
-# Testes unitários com Jest
+# Zoo functions
 
 Projeto feito de forma individual durante o curso da [Trybe](https://www.betrybe.com/) com o objetivo de implementar funções em Javascript para o funcionamento de um Zoológico.
 
