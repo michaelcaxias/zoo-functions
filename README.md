@@ -1,4 +1,4 @@
-<img src="https://nx.dev/documentation/shared/jest-logo.png" alt="logo jest" width="80px" align="right">
+<img src="https://cdn.iconscout.com/icon/free/png-256/javascript-3630127-3031259.png" alt="logo javascript" width="80px" align="right">
 
 # Testes unitários com Jest
 
