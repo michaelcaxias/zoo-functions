@@ -4,12 +4,15 @@
 
 Projeto feito de forma individual durante o curso da [Trybe](https://www.betrybe.com/) com o objetivo de implementar funções em Javascript para o funcionamento de um Zoológico.
 
-## 🔧 Funçoes
+## ⭐ Habilidades
 
 - Utilizar as habilidades de Javascript.
+
+## 🔧 Funçoes
+
 - Iterar em arrays utilizando Higher Order Functions.
 
-## Como iniciar
+## 💻 Como iniciar
 
 1. Faça o clone do projeto
 2. Entre no Visual Studio Code
